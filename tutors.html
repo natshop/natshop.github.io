@@ -31,7 +31,7 @@ h2{font-size:18px;color:var(--acc);margin:20px 0 6px}
 var PRICE=300;
 /* Set your Telegram or WhatsApp link here */
 var CFG={link:"https://t.me/YOUR_USERNAME"};
-var CATS=[["all","All","✨",""],["A","Academic","🎓","Academic Tutor"],["P","Photoshop","🖼️","Adobe Photoshop Tutor"],["I","Illustrator","✒️","Adobe Illustrator Tutor"],["E","After Effects","🎬","Adobe After Effects Tutor"],["C","Basic Computer","💻","Basic Computer Tutor"]];
+var CATS=[["all","All","✨",""],["A","Academic","🎓","Academic Tutor"],["P","Photoshop","🖼️","Adobe Photoshop Tutor"],["I","Illustrator","✒️","Adobe Illustrator Tutor"],["E","After Effects","🎬","Adobe After Effects Tutor"],["C","Basic Computer","💻","Basic Computer Tutor"],["D","Free Course","🎁","Free Graphic Design Course"]];
 var T=[
 ["A","➗","Mathematics for Social Science","Logic, sets, functions, matrices, sequences, statistics and calculus with quizzes and exact answers.","math-tutor-free.html"],
 ["A","📐","Mathematics for Natural Science","Algebra, trigonometry, limits and derivatives for natural science freshmen.",""],
@@ -54,11 +54,12 @@ var T=[
 ["P","🖼️","Adobe Photoshop Tutor","12 lessons with pictures, puzzles, shortcut games and design challenges. Basic to Advanced.","photoshop-tutor-free.html"],
 ["I","✒️","Adobe Illustrator Tutor","Pen tool, shapes, logos, vector art and print-ready export. Basic, Intermediate and Advanced with pictures.","illustrator-tutor-free.html"],
 ["E","🎬","Adobe After Effects Tutor","12 lessons with pictures, an interactive Keyframe Lab, puzzles and mini projects. Basic to Advanced.","aftereffects-tutor-free.html"],
-["C","💻","Basic Computer Tutor","Computer basics, Windows, Word, Excel, PowerPoint and internet safety. Junior to Advanced, with labs, games and challenges.","computer-tutor-free.html"]
+["C","💻","Basic Computer Tutor","Computer basics, Windows, Word, Excel, PowerPoint and internet safety. Junior to Advanced, with labs, games and challenges.","computer-tutor-free.html"],
+["D","🎨","Graphic Design: the Full Course","10 chapters of detailed notes, pictures, key terms, quizzes, a final exam and a certificate. Completely free.","graphic-design-course.html"]
 ];
 var f="all";
 function chips(){document.getElementById("chips").innerHTML=CATS.map(function(c){return '<button class="chip'+(f==c[0]?' on':'')+'" onclick="f=\''+c[0]+'\';render()">'+c[2]+' '+c[1]+'</button>'}).join("")}
-function card(t){return '<div class="card"><div class="top"><span class="ic">'+t[1]+'</span><span class="t">'+t[2]+'</span><span class="pr">'+PRICE+' ETB</span></div><p class="d">'+t[3]+'</p><div class="row">'+(t[4]?'<a class="b" href="'+t[4]+'">Preview</a>':'<span class="soon">Coming soon</span>')+'<a class="b2" target="_blank" rel="noopener" href="'+CFG.link+'">Get · '+PRICE+' ETB</a></div></div>'}
+function card(t){return '<div class="card"><div class="top"><span class="ic">'+t[1]+'</span><span class="t">'+t[2]+'</span><span class="pr">'+(t[0]=="D"?"FREE":PRICE+" ETB")+'</span></div><p class="d">'+t[3]+'</p><div class="row">'+(t[0]=="D"?'<a class="b" href="'+t[4]+'">Start free course</a>':(t[4]?'<a class="b" href="'+t[4]+'">Preview</a>':'<span class="soon">Coming soon</span>')+'<a class="b2" target="_blank" rel="noopener" href="'+CFG.link+'">Get · '+PRICE+' ETB</a>')+'</div></div>'}
 function render(){chips();var q=document.getElementById("q").value.toLowerCase(),h="";
  CATS.slice(1).forEach(function(c){if(f!="all"&&f!=c[0])return;var a=T.filter(function(t){return t[0]==c[0]&&(t[2]+t[3]).toLowerCase().indexOf(q)>-1});if(a.length)h+='<h2>'+c[2]+' '+c[3]+' ('+a.length+')</h2>'+a.map(card).join("")});
  document.getElementById("list").innerHTML=h||'<p class="d">No tutor found.</p>'}
