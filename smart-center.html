@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b5d42"><meta name="description" content="Smart Center: academic courses, Adobe skills and computer training.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png">
+<title>Smart Center – Learn smart. Create smart.</title>
+<style>
+:root{--bg:#f3f7f5;--card:#fff;--ink:#14261f;--mut:#5d6f67;--ac:#0f7a55;--ac2:#12a37a;--gold:#f5a524;--line:#dbe6e0;--sh:0 6px 20px #14261f14;box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-t="dark"]{--bg:#0d1612;--card:#16231d;--ink:#eaf3ee;--mut:#9db3a8;--ac:#3fc79a;--ac2:#2aa57e;--line:#27382f;--sh:0 6px 20px #0008}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-tap-highlight-color:transparent}
+.hero{background:linear-gradient(135deg,#0b5d42,#12a37a 65%,#f5a524);color:#fff;padding:calc(18px + env(safe-area-inset-top,0px)) 16px 22px;border-radius:0 0 28px 28px}
+.brand{display:flex;gap:12px;align-items:center;max-width:760px;margin:0 auto 14px}.logo{width:46px;height:46px;border-radius:14px;background:#fff;color:#0b5d42;display:grid;place-items:center;font-weight:900;font-size:19px}
+.brand h1{margin:0;font-size:24px;line-height:1.1}.brand small{opacity:.92}.brand div{flex:1}
+.hero button,.hero input{max-width:760px}#th{border:0;background:#ffffff33;color:#fff;border-radius:12px;padding:8px 12px;font-size:18px}
+#q{display:block;width:100%;margin:0 auto;padding:14px 16px;border-radius:16px;border:0;font-size:16px;background:#fff;color:#14261f}
+.ins{display:block;width:100%;margin:10px auto 0;padding:11px;border-radius:14px;border:1.5px solid #ffffffaa;background:#ffffff22;color:#fff;font-weight:700}
+main{max-width:760px;margin:0 auto;padding:14px 14px 50px}
+.trial{background:linear-gradient(90deg,#f5a52426,#12a37a22);border:1.5px dashed var(--gold);border-radius:16px;padding:12px 14px;font-size:14px}
+h3{margin:22px 0 10px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{background:var(--card);border:2px solid transparent;border-radius:18px;padding:14px 6px;text-align:center;box-shadow:var(--sh);color:var(--ink)}.tile span{display:block;font-size:28px}.tile b{display:block;font-size:13px}.tile small{color:var(--mut);font-size:11px}.tile.on{border-color:var(--ac);background:color-mix(in srgb,var(--ac) 10%,var(--card))}
+.row{display:flex;gap:8px;overflow-x:auto;padding:8px 0;scrollbar-width:none}.chip{flex:0 0 auto;padding:8px 14px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:14px;font-weight:600}.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.card{background:var(--card);border-radius:20px;padding:14px;margin:12px 0;box-shadow:var(--sh);border:1px solid var(--line)}
+.top{display:flex;gap:12px;align-items:center}.ic{font-size:32px;width:52px;height:52px;border-radius:16px;background:color-mix(in srgb,var(--ac) 12%,var(--card));display:grid;place-items:center;flex:none}.tt{flex:1}.tt b{display:block;line-height:1.25}.tt small{color:var(--mut)}
+.pr{font-size:12px;font-weight:800;background:var(--gold);color:#2a1c00;padding:4px 9px;border-radius:10px;text-align:center;line-height:1.3}.pr s{opacity:.7;display:block}.pr.free{background:var(--ac2);color:#fff}.pr.soon{background:var(--line);color:var(--mut)}
+.card p{margin:10px 0;color:var(--mut);font-size:14px}.act{display:flex;gap:8px}.b{flex:1;text-align:center;padding:12px;border-radius:14px;background:var(--ac);color:#fff;font-weight:800;text-decoration:none;font-size:14px}.b.o{background:none;border:2px solid var(--ac);color:var(--ac)}
+.i2{width:46px;border-radius:14px;border:1px solid var(--line);background:var(--bg);font-size:18px}
+.rec{background:linear-gradient(120deg,var(--ac),var(--ac2));color:#fff;border-radius:18px;padding:14px;margin:14px 0;display:flex;align-items:center;gap:12px}.rec a{margin-left:auto;background:#fff;color:#0b5d42;padding:9px 14px;border-radius:12px;font-weight:800;text-decoration:none}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:8px 0}summary{font-weight:700;cursor:pointer}details p{color:var(--mut);margin:8px 0 0;font-size:14px}
+.req{display:block;text-align:center;margin:20px 0;padding:14px;border-radius:16px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:800}
+.ft{text-align:center;color:var(--mut);font-size:13px}.empty{text-align:center;color:var(--mut);padding:30px}
+</style></head><body>
+<div class="hero"><div class="brand"><span class="logo">SC</span><div><h1>Smart Center</h1><small>Learn smart. Create smart.</small></div><button id="th" aria-label="Dark mode">◐</button></div>
+<input id="q" placeholder="🔍 Search courses, tools or topics" autocomplete="off"><button class="ins" id="ins">📲 Install Smart Center as an app</button></div>
+<main>
+<div class="trial">🎁 <b>Free trial:</b> every available course is fully unlocked for now. The crossed-out price is the regular price after the trial.</div>
+<div id="rec"></div>
+<h3>Choose a subject</h3><div class="tiles" id="tiles"></div>
+<div class="row" id="subs"></div><div class="row" id="chips"></div>
+<div id="list"></div>
+<h3>Bundles</h3>
+<div class="card"><div class="top"><span class="ic">🎨</span><div class="tt"><b>Adobe Creative Pack</b><small>Photoshop + Illustrator + After Effects</small></div><span class="pr"><s>1,100 ETB</s>FREE TRIAL</span></div><p>Save 250 ETB compared with buying the three courses separately (1,350 ETB).</p><div class="act"><a class="b o" id="bt" target="_blank" rel="noopener">💬 Ask about the bundle</a></div></div>
+<div class="card"><div class="top"><span class="ic">🎓</span><div class="tt"><b>Freshman Pack</b><small>All academic courses for a semester</small></div><span class="pr soon">1,500 ETB</span></div><p>Planned for when the academic library is complete. Tell us which courses you need first.</p></div>
+<h3>Help</h3>
+<details><summary>How does the free trial work?</summary><p>All courses marked FREE TRIAL open fully, with no payment. Later, full access will cost the price shown. Courses marked Coming soon are being built.</p></details>
+<details><summary>How do I install it as an app?</summary><p>Android: tap Install at the top, or the browser menu then Install app. iPhone: tap Share then Add to Home Screen. After the first visit, the courses also work offline.</p></details>
+<details><summary>Are my progress and notes saved?</summary><p>Yes, on your own device and browser. If you clear your browser data, they are removed.</p></details>
+<a class="req" id="rq" target="_blank" rel="noopener">✉️ Request a course</a>
+<p class="ft">Smart Center · natshop.github.io</p>
+</main>
+<script>
+const TG="https://t.me/YOUR_USERNAME"; /* put your Telegram link here */
+const $=s=>document.querySelector(s),gj=k=>{try{return JSON.parse(localStorage.getItem(k)||"null")}catch(e){return null}},sj=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+$("#bt").href=TG;$("#rq").href=TG;
+const CATS=[["A","🎓","Academics"],["P","🖼️","Photoshop"],["I","✒️","Illustrator"],["E","🎬","After Effects"],["C","💻","Computer"],["D","🎁","Free course"]];
+const SUBS=[["all","All academics"],["S","Social Science"],["N","Natural Science"],["C","Common courses"]],SN={S:"Social Science",N:"Natural Science",C:"Common course"};
+/* cat, sub, icon, title, description, file, regular price (ETB) */
+const T=[
+["A","S","➗","Mathematics for Social Science","Logic, sets, functions, matrices, sequences, statistics and calculus with quizzes and exact answers.","math-tutor.html",200],
+["A","S","💰","Introduction to Economics","Demand, supply, elasticity, costs and national income.","",150],
+["A","S","🧠","General Psychology","Learning, memory, motivation, personality and behavior.","",150],
+["A","S","📊","Introduction to Statistics","Data, averages, spread, probability and simple tests.","",150],
+["A","S","👥","Social Anthropology","Culture, kinship, society and fieldwork basics.","",150],
+["A","N","📐","Mathematics for Natural Science","Algebra, trigonometry, limits and derivatives.","",150],
+["A","N","⚛️","General Physics","Mechanics, heat, waves and electricity with solved problems.","",150],
+["A","N","🧪","General Chemistry","Atoms, bonding, moles, reactions and equilibrium.","",150],
+["A","N","🧬","General Biology","Cells, genetics, evolution and ecology.","",150],
+["A","C","✍️","Communicative English Skills","Grammar, reading, writing and speaking practice.","",150],
+["A","C","🤖","Introduction to Emerging Technologies","AI, IoT, big data, blockchain and their uses.","",150],
+["A","C","🕊️","Moral and Civic Education","Ethics, rights, duties, democracy and citizenship.","",150],
+["A","C","💡","Critical Thinking","Arguments, fallacies, reasoning and decision making.","",150],
+["A","C","🗺️","Geography of Ethiopia and the Horn","Landforms, climate, resources and population.","",150],
+["A","C","📜","History of Ethiopia and the Horn","Major periods, states, events and key figures.","",150],
+["A","C","🌍","Global Trends","Globalization, politics, environment and world issues.","",150],
+["A","C","🤝","Inclusiveness","Diversity, disability, gender and inclusive practice.","",150],
+["A","C","🚀","Entrepreneurship","Business ideas, planning, marketing and finance basics.","",150],
+["P","","🖼️","Adobe Photoshop","12 lessons, puzzles, a shortcut memory game and design challenges. Basic to Advanced.","photoshop-tutor.html",450],
+["I","","✒️","Adobe Illustrator","12 picture-guided lessons from the pen tool to brand systems. Basic to Advanced.","illustrator-tutor.html",450],
+["E","","🎬","Adobe After Effects","12 lessons, an interactive Keyframe Lab, puzzles and mini projects. Basic to Advanced.","aftereffects-tutor.html",450],
+["C","","💻","Basic Computer Skills","Computer basics, Windows, Word, Excel, PowerPoint and internet safety. Junior to Advanced.","computer-tutor.html",250],
+["D","","🎨","Graphic Design: the Full Course","10 chapters of notes, quizzes, a glossary, a final exam and a certificate.","graphic-design-course.html",0]
+];
+let cat="all",sub="all",flt="all",fav=gj("sc-fav")||[];
+const pr=t=>t[6]==0?'<span class="pr free">FREE</span>':t[5]?`<span class="pr"><s>${t[6]} ETB</s>FREE TRIAL</span>`:`<span class="pr soon">${t[6]} ETB</span>`;
+function tiles(){$("#tiles").innerHTML=CATS.map(c=>{const a=T.filter(t=>t[0]==c[0]),r=a.filter(t=>t[5]).length;return `<button class="tile ${cat==c[0]?"on":""}" data-c="${c[0]}"><span>${c[1]}</span><b>${c[2]}</b><small>${r}/${a.length} ready</small></button>`}).join("")}
+function bars(){$("#subs").innerHTML=cat=="A"?SUBS.map(s=>`<button class="chip ${sub==s[0]?"on":""}" data-s="${s[0]}">${s[1]}</button>`).join(""):"";
+ $("#chips").innerHTML=[["all","All"],["ready","✅ Available"],["soon","🔜 Coming soon"],["fav","❤️ Saved"]].map(s=>`<button class="chip ${flt==s[0]?"on":""}" data-f="${s[0]}">${s[1]}</button>`).join("")}
+function card(t){const i=T.indexOf(t);return `<div class="card"><div class="top"><span class="ic">${t[2]}</span><div class="tt"><b>${t[3]}</b><small>${t[0]=="A"?SN[t[1]]:CATS.find(c=>c[0]==t[0])[2]}</small></div>${pr(t)}</div><p>${t[4]}</p><div class="act">${t[5]?`<a class="b" href="${t[5]}" data-o="${i}">Open course</a>`:`<a class="b o" target="_blank" rel="noopener" href="${TG}">🔔 Notify me</a>`}<button class="i2" data-h="${i}" aria-label="Save">${fav.includes(t[3])?"❤️":"🤍"}</button><button class="i2" data-sh="${i}" aria-label="Share">↗</button></div></div>`}
+function render(){tiles();bars();const q=$("#q").value.toLowerCase().trim();
+ let a=T.filter(t=>(cat=="all"||t[0]==cat)&&(cat!="A"||sub=="all"||t[1]==sub)&&(flt=="all"||(flt=="ready"&&t[5])||(flt=="soon"&&!t[5])||(flt=="fav"&&fav.includes(t[3])))&&(t[3]+t[4]).toLowerCase().includes(q));
+ a.sort((x,y)=>(y[5]?1:0)-(x[5]?1:0));
+ $("#list").innerHTML=(cat=="all"&&!q?'<h3>All courses ('+a.length+')</h3>':"")+(a.map(card).join("")||'<div class="empty">No course found.<br>Try another search, or request it below.</div>');
+ const r=gj("sc-rec");$("#rec").innerHTML=r?`<div class="rec"><span style="font-size:26px">▶️</span><div><small>Continue learning</small><br><b>${r[0]}</b></div><a href="${r[1]}">Open</a></div>`:""}
+document.addEventListener("click",e=>{const d=e.target.closest("button,a");if(!d)return;const D=d.dataset;
+ if(D.c){cat=cat==D.c?"all":D.c;sub="all";render()}else if(D.s){sub=D.s;render()}else if(D.f){flt=D.f;render()}
+ else if(D.h){const n=T[+D.h][3];fav=fav.includes(n)?fav.filter(x=>x!=n):[...fav,n];sj("sc-fav",fav);render()}
+ else if(D.sh){const t=T[+D.sh],u=new URL(t[5]||"smart-center.html",location.href).href;if(navigator.share)navigator.share({title:t[3],text:"Learn "+t[3]+" on Smart Center",url:u}).catch(()=>{});else{try{navigator.clipboard.writeText(u);alert("Link copied")}catch(x){}}}
+ else if(D.o){const t=T[+D.o];sj("sc-rec",[t[3],t[5]])}});
+$("#q").addEventListener("input",render);
+const root=document.documentElement;try{const s=localStorage.getItem("sc-theme");if(s)root.dataset.t=s}catch(e){}
+$("#th").onclick=()=>{const n=root.dataset.t=="dark"?"light":"dark";root.dataset.t=n;try{localStorage.setItem("sc-theme",n)}catch(e){}};
+let dp;addEventListener("beforeinstallprompt",e=>{e.preventDefault();dp=e});
+if(matchMedia("(display-mode: standalone)").matches)$("#ins").style.display="none";
+$("#ins").onclick=async()=>{if(dp){dp.prompt();dp=null}else alert("Android: open the browser menu and tap Install app.\niPhone: tap Share, then Add to Home Screen.")};
+if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+render();
+</script></body></html>

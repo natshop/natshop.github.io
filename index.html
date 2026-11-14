@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#070B16"><meta name="description" content="Nati shop: logos, ebooks, courses and tutors by Natnael Alemayehu."><title>Nati shop — Logos, ebooks and courses</title>
+<meta name="theme-color" content="#070B16"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><meta name="description" content="Nati shop: logos, ebooks, courses and tutors by Natnael Alemayehu."><title>Nati shop — Logos, ebooks and courses</title>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#EEF1F6;--ink:#0B1220;--mute:#566176;--card:#FAFBFD;--line:#cfd6e2;--acc:#2B8CFF;--btn:#1766D6;--deep:#070B16;
@@ -214,7 +214,7 @@ const pages={
 <section><div class="head"><div><h2>What I do</h2></div></div><div class="grid">${[['Graphic design','Logos, brand identity and social media visuals.'],['Video editing','Cutting, colour grading and motion graphics.'],['Digital marketing','Helping brands grow with strategy and content.']].map(x=>`<article class="card"><div class="b"><h3>${x[0]}</h3><p>${x[1]}</p></div></article>`).join('')}</div></section>
 <section><div class="head"><div><h2>Popular downloads</h2><p>Instant access after checkout.</p></div><a href="#/shop">View all products</a></div><div class="grid">${[P[0],P[3],P[6]].map(card).join('')}</div></section>
 <section><div class="head"><div><h2>Always learning</h2><p>My most recent certificates.</p></div><a href="#/certificates">All 12 certificates</a></div><div class="grid">${CERTS.slice(0,3).map(cc).join('')}</div></section>
-<section><div class="band"><span class="tag">NEW</span><h2>Nati Tutors</h2><p>Freshman academic courses, Adobe Photoshop, Illustrator, After Effects and basic computer. 300 ETB per tutor, with a free sample.</p><a class="btn acc" href="tutors.html">Explore tutors</a></div></section>
+<section><div class="band"><span class="tag">NEW</span><h2>Smart Center</h2><p>All freshman courses, Adobe Photoshop, Illustrator, After Effects and computer skills. Free trial for a limited time.</p><a class="btn acc" href="smart-center.html">Open Smart Center</a></div></section>
 <section><div class="band"><img class="mk" src="${MARK}" alt=""><h2>Need a custom logo?</h2><p>Send a short brief and I'll reply within two working days with a quote and timeline.</p><a class="btn acc" href="#/contact">Start a project</a></div></section>`,
 '/donate':()=>`<section class="two"><div><h2>Support Nati shop</h2><p style="color:var(--mute)">Like what I make? Send any amount with Telebirr. Every contribution goes into new logo kits, ebooks and lessons.</p></div><div class="band"><h3 style="font-size:1.3rem">Donate with Telebirr</h3><p>Open Telebirr, choose Send Money and enter this number.</p><b style="font:800 2rem 'Bricolage Grotesque',sans-serif">0991904062</b><button class="btn acc" data-copy="0991904062">Copy number</button></div></section>`,
 '/work':()=>`
@@ -228,7 +228,7 @@ const pages={
 '/certificates':()=>`<section><div class="head"><div><h2>Certificates</h2><p>Courses and training I have completed. Tap a certificate to enlarge it.</p></div></div><h3 class="sub">Professional courses</h3><div class="grid">${CERTS.filter(c=>!c[4]).map(cc).join('')}</div><h3 class="sub">e-SHE learning series, Ministry of Education</h3><div class="grid">${CERTS.filter(c=>c[4]).map(cc).join('')}</div></section>`,
 '/contact':()=>`<section class="two"><div><h2>Let's talk</h2><p style="color:var(--mute)">Tell me about your project or ask about a product.</p><ul class="list"><li><b>Address</b><br>Sebeta, Oromia, Ethiopia</li><li><b>Phone</b><br><a href="tel:+251991904062">+251 99 190 4062</a></li><li><b>Email</b><br><a href="mailto:nalemayehu975@gmail.com">nalemayehu975@gmail.com</a></li><li><b>WhatsApp</b><br><a href="https://wa.me/251991904062">Chat on WhatsApp</a></li></ul></div><div><label for="n">Your name</label><input id="n"><label for="e">Email</label><input id="e" type="email"><label for="m">Message</label><textarea id="m" rows="5"></textarea><p><button class="btn" id="send">Send message</button></p><div id="ok"></div></div></section>`};
 function route(){const r=(location.hash.slice(1)||'/');const f=pages[r]||pages['/'];$('#app').innerHTML=f();slStart();
-$('#nav').innerHTML=[['/','Home'],['/work','Work'],['/shop','Shop'],['tutors.html','Tutors'],['/about','About'],['/certificates','Certificates'],['/contact','Contact'],['/donate','Donate']].map(([h,t])=>`<a href="${h.includes('.')?h:'#'+h}" class="${h===r?'on':''}">${t}</a>`).join('');window.scrollTo(0,0)}
+$('#nav').innerHTML=[['/','Home'],['/work','Work'],['/shop','Shop'],['smart-center.html','Smart Center'],['/about','About'],['/certificates','Certificates'],['/contact','Contact'],['/donate','Donate']].map(([h,t])=>`<a href="${h.includes('.')?h:'#'+h}" class="${h===r?'on':''}">${t}</a>`).join('');window.scrollTo(0,0)}
 function paint(){$('#cb').textContent=`Cart (${cart.length})`;const L=cart.map(id=>P.find(x=>x.id===id));
 $('#items').innerHTML=L.length?L.map(x=>`<div class="item">${art(x.id,x.c==='Logos'?'logo':x.c==='Ebooks'?'book':'course',x.t)}<div><b>${x.t}</b><br><button data-rm="${x.id}">Remove</button></div><span class="price">$${x.p}</span></div>`).join(''):'<p style="color:var(--mute)">Your cart is empty. Browse the shop to add a logo kit, ebook or course.</p>';
 $('#tot').innerHTML=L.length?`<div style="display:flex;justify-content:space-between;font-weight:700;margin-bottom:10px"><span>Total</span><span>$${L.reduce((s,x)=>s+x.p,0)}</span></div><button class="btn" style="width:100%" id="co">Check out</button><div id="cm"></div>`:''}
@@ -268,4 +268,4 @@ const _route=route;route=function(){const a=$('#app');a.style.opacity=0;_route()
 addEventListener('keydown',e=>{if(e.key==='/'&&$('#sq')&&document.activeElement.tagName!=='INPUT'){e.preventDefault();$('#sq').focus()}});
 addEventListener('hashchange',route);route();paint();
 </script>
-</body></html>
+<script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))</script></body></html>
